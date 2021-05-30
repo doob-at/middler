@@ -15,12 +15,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "middler.Action.Scripting", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "middler.Tests", "tests\middler.Tests\middler.Tests.csproj", "{68EC7498-5C77-47D5-ABCD-AAC227899D2C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{1AA3909B-BF3D-46EB-BE75-C28F40BC8B17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AA3909B-BF3D-46EB-BE75-C28F40BC8B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA3909B-BF3D-46EB-BE75-C28F40BC8B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8886E874-E071-4AF7-B492-A44BDD340CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8886E874-E071-4AF7-B492-A44BDD340CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8886E874-E071-4AF7-B492-A44BDD340CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
