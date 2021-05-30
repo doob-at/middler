@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0</TargetFrameworks>
+    <AssemblyName>doob.middler.Action.Scripting</AssemblyName>
+    <RootNamespace>doob.middler.Action.Scripting</RootNamespace>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Bernhard Windisch</Authors>
+    <Company>-</Company>
+    <Description></Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/doob-at/middler</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/doob-at/middler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageId>doob.middler.Action.Scripting</PackageId>
+    <Product>doob.middler.Action.Scripting</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="doob.Reflectensions.CommonExtensions" Version="6.1.1-beta0002" />
+    <PackageReference Include="doob.Reflectensions.Json" Version="6.1.1-beta0002" />
+    <PackageReference Include="doob.Scripter" Version="0.1.0-beta0040" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\middler.Common\middler.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0</TargetFrameworks>
+    <AssemblyName>doob.middler.Common.StreamHelper</AssemblyName>
+    <RootNamespace>doob.middler.Common.StreamHelper</RootNamespace>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Bernhard Windisch</Authors>
+    <Company>-</Company>
+    <Description></Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/doob-at/middler</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/doob-at/middler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageId>doob.middler.Common.StreamHelper</PackageId>
+    <Product>doob.middler.Common.StreamHelper</Product>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
