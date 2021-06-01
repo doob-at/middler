@@ -52,11 +52,15 @@ namespace doob.middler
                     var func = FileExtensionMap.GetFunc(ext);
                     
                     var action = func?.Invoke(fileInfo, File.ReadAllText(fileInfo.FullName));
-                    var rule = new MiddlerRule();
-                    rule.Path = fileInfo.FullName.Substring(FSRoot.FullName.Length).Replace("\\","/");
-                    rule.Name = rule.Path;
-                    rule.Actions = new() {action};
-                    list.Add(rule);
+                    if (action != null)
+                    {
+                        var rule = new MiddlerRule();
+                        rule.Path = fileInfo.FullName.Substring(FSRoot.FullName.Length).Replace("\\", "/");
+                        rule.Name = rule.Path;
+                        rule.Actions = new() { action };
+                        list.Add(rule);
+                    }
+                    
                 }
             }
 

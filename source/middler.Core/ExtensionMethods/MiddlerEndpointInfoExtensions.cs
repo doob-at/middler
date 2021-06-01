@@ -33,6 +33,10 @@ namespace doob.middler.ExtensionMethods
             var isAuthenticated = middlerRequestContext.Principal.Identity?.IsAuthenticated == true;
 
             foreach (var permissionRule in permissionRules) {
+                
+                if(middlerRequestContext.SourceIPAddress == null)
+                    continue;
+
                 var inRange = SourceIpAddressIsInRange(middlerRequestContext.SourceIPAddress, permissionRule.SourceAddress);
                 var isClient = IsCurrentClient(middlerRequestContext.Principal, permissionRule.Client);
 

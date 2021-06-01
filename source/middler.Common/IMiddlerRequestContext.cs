@@ -12,7 +12,7 @@ namespace doob.middler.Common
     {
         
         ClaimsPrincipal Principal { get; set; }
-        IPAddress SourceIPAddress { get; set; }
+        IPAddress? SourceIPAddress { get; set; }
         List<IPAddress> ProxyServers { get; set; }
         MiddlerRouteData RouteData { get; set; }
         ExpandableObject Headers { get; set; }

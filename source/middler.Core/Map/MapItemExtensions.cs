@@ -23,15 +23,15 @@ namespace doob.middler.Map
 
             switch (item.ItemType) {
                 case MapItemType.NamedRepo: {
-                    var repo = serviceProvider.GetRequiredNamedService<IMiddlerRepository>(item.RepoName);
+                    var repo = serviceProvider.GetRequiredNamedService<IMiddlerRepository>(item.RepoName!);
                     return repo.ProvideRules();
                 }
                 case MapItemType.Repo: {
-                    var repo = (IMiddlerRepository)serviceProvider.GetRequiredService(item.RepoType);
+                    var repo = (IMiddlerRepository)serviceProvider.GetRequiredService(item.RepoType!);
                     return repo.ProvideRules();
                 }
                 case MapItemType.Rule: {
-                    return new List<MiddlerRule>() { item.Rule };
+                    return new List<MiddlerRule>() { item.Rule! };
                 }
             }
 

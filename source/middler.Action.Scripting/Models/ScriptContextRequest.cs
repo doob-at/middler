@@ -19,7 +19,7 @@ namespace doob.middler.Action.Scripting.Models
 
         public bool Authenticated => _middlerRequestContext.Principal.Identity?.IsAuthenticated ?? false;
 
-        public string ClientIp=> _middlerRequestContext.SourceIPAddress.ToString();
+        public string? ClientIp => _middlerRequestContext.SourceIPAddress?.ToString();
         public string[] ProxyServers => _middlerRequestContext.ProxyServers.Select(ip => ip.ToString()).ToArray();
 
         private readonly IMiddlerRequestContext _middlerRequestContext;
