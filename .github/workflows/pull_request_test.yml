@@ -11,7 +11,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-2016
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -20,6 +20,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
     - name: Nuke Build
       run: ./build.ps1 Pack
