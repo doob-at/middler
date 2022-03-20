@@ -2,6 +2,6 @@
 {
     public interface IActionHelper
     {
-        string BuildPathFromRoutData(string template);
+        //string BuildPathFromRoutData(string template);
     }
 }

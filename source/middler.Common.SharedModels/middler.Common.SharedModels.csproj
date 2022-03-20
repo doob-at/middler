@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="doob.Reflectensions.ExpandableObject" Version="6.2.1-beta0002" />
+    <PackageReference Include="doob.Reflectensions.ExpandableObject" Version="6.3.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 

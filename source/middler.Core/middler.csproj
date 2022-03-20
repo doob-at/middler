@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
     <AssemblyName>doob.middler</AssemblyName>
     <RootNamespace>doob.middler</RootNamespace>
     <LangVersion>9</LangVersion>
@@ -30,11 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="doob.Reflectensions.CommonExtensions" Version="6.2.0" />
-    <PackageReference Include="doob.Reflectensions.Json" Version="6.2.0" />
+    <PackageReference Include="doob.Reflectensions.CommonExtensions" Version="6.3.5" />
+    <PackageReference Include="doob.Reflectensions.Json" Version="6.3.5" />
     <PackageReference Include="NamedServices.Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Scriban" Version="3.7.0" />
   </ItemGroup>
 
 </Project>
