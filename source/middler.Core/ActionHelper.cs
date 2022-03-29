@@ -1,5 +1,7 @@
-﻿using doob.middler.Common;
+﻿using System.Collections.Generic;
+using doob.middler.Common;
 using doob.middler.Common.Interfaces;
+using doob.Reflectensions;
 using doob.Reflectensions.Common;
 
 
@@ -14,33 +16,32 @@ namespace doob.middler
             _middlerRequestContext = middlerRequestContext;
         }
 
+
         //public string BuildPathFromRoutData(string template)
         //{
 
-
-        //    var queryObj = new ScriptObject
+            
+        //    var queryObj = new ExpandableObject
         //    {
         //        ["*"] = _middlerRequestContext.Uri.Query.ToNull()?.Substring(1)
         //    };
-
-        //    queryObj.Import(_middlerRequestContext.QueryParameters, renamer:member => member.Name);
-
         //    foreach (var (key, value) in _middlerRequestContext.QueryParameters)
         //    {
         //        queryObj[key] = value;
         //    }
 
-        //    var uriObj = new ScriptObject();
-        //    uriObj.Import(_middlerRequestContext.Uri, renamer: member => member.Name);
+        //    //queryObj.Import(_middlerRequestContext.QueryParameters, renamer: member => member.Name);
+        //    //var uriObj = new ExpandableObject(_middlerRequestContext.Uri);
+        //    // Json.Converter.ToDictionary(_middlerRequestContext.Uri);
 
-        //    var routeObj = new ScriptObject();
-        //        routeObj.Import(_middlerRequestContext.RouteData);
+
+        //    //var routeObj = new ExpandableObject(_middlerRequestContext.RouteData);
 
         //    var scriptObj = new ScriptObject
         //    {
-        //        ["Route"] = routeObj,
+        //        ["Route"] = _middlerRequestContext.RouteData,
         //        ["Query"] = queryObj,
-        //        ["Uri"] = uriObj
+        //        ["Uri"] = _middlerRequestContext.Uri
         //    };
 
 
@@ -85,4 +86,6 @@ namespace doob.middler
         //    //return cleanString;
         //}
     }
+
+
 }

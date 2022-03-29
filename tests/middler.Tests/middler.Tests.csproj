@@ -24,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\source\Actions\middler.Action.UrlRedirect\middler.Action.UrlRedirect.csproj" />
+    <ProjectReference Include="..\..\source\Actions\middler.Action.UrlRewrite\middler.Action.UrlRewrite.csproj" />
     <ProjectReference Include="..\..\source\middler.Action.Scripting\middler.Action.Scripting.csproj" />
     <ProjectReference Include="..\..\source\middler.Core\middler.csproj" />
   </ItemGroup>

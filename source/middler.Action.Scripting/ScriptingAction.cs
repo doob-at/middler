@@ -17,6 +17,7 @@ namespace doob.middler.Action.Scripting
 
         private readonly IServiceProvider _serviceProvider;
 
+        private IScriptEngine scriptEngine { get; set; }
         public ScriptingAction(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
@@ -25,7 +26,7 @@ namespace doob.middler.Action.Scripting
         public async Task ExecuteRequestAsync(IMiddlerContext middlerContext)
         {
            
-            IScriptEngine scriptEngine = _serviceProvider.GetRequiredNamedService<IScriptEngine>(Parameters.Language);
+            scriptEngine = _serviceProvider.GetRequiredNamedService<IScriptEngine>(Parameters.Language);
 
             var compile = scriptEngine.NeedsCompiledScript && (!string.IsNullOrEmpty(Parameters.SourceCode) &&
                                                                string.IsNullOrWhiteSpace(Parameters.CompiledCode));
@@ -58,6 +59,15 @@ namespace doob.middler.Action.Scripting
             Terminating = endpointModule?.Options.Terminating ?? Terminating;
         }
 
+
+        public void ExecuteResponseAsync()
+        {
+            var responseFunction = scriptEngine.GetFunction("ExecuteResponse");
+            if (responseFunction != null)
+            {
+                responseFunction.Invoke();
+            }
+        }
 
         public string? CompileScriptIfNeeded()
         {

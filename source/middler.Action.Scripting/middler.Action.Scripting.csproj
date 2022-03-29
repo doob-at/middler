@@ -2,10 +2,10 @@
 
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <AssemblyName>doob.middler.Action.Scripting</AssemblyName>
     <RootNamespace>doob.middler.Action.Scripting</RootNamespace>
-    <LangVersion>9</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
@@ -25,7 +25,7 @@
   <ItemGroup>
     <PackageReference Include="doob.Reflectensions.CommonExtensions" Version="6.3.5" />
     <PackageReference Include="doob.Reflectensions.Json" Version="6.3.5" />
-    <PackageReference Include="doob.Scripter" Version="0.1.0-beta0044" />
+    <PackageReference Include="doob.Scripter" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using doob.middler;
 using doob.middler.Action.Scripting;
 using doob.middler.Action.Scripting.Models;
+using doob.middler.Action.UrlRedirect;
 using doob.middler.Common.SharedModels.Enums;
 using doob.middler.ExtensionMethods;
 using doob.middler.Helper;
@@ -53,6 +54,7 @@ namespace middler.Tests
 
                             services.AddMiddler(opts =>
                                 opts.AddScriptingAction()
+                                    .AddUrlRedirectAction()
                                     .SetDefaultAccessMode(AccessMode.Allow)
                             );
 
@@ -100,6 +102,7 @@ namespace middler.Tests
                                             Language = "JavaScript",
                                             SourceCode = "var end = require('Endpoint');end.Response.Ok([true, false]);"
                                         }));
+                                    builder.On("redirect", actions => actions.RedirectTo("redirected"));
                                 }
 
                             );
@@ -155,6 +158,15 @@ namespace middler.Tests
 
             var response = await _client.GetAsync("/ps/simple2.ps1");
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+
+        }
+
+        [Fact]
+        public async Task SimpleRedirect()
+        {
+
+            var respone = await _client.GetAsync("/redirect");
+            Assert.Equal("http://localhost/redirected", respone.Headers.Location?.ToString());
 
         }
     }
