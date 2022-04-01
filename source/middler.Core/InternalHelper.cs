@@ -20,7 +20,7 @@ namespace doob.middler
             MiddlerOptions = serviceProvider.GetRequiredService<IMiddlerOptions>();
         }
 
-        public IMiddlerAction? BuildBasicActionInstancefromTypeName(string actionType)
+        public MiddlerAction? BuildBasicActionInstanceFromTypeName(string actionType)
         {
             if (String.IsNullOrWhiteSpace(actionType))
                 return null;
@@ -29,7 +29,7 @@ namespace doob.middler
             if (actType == null)
                 return null;
 
-            return (IMiddlerAction)ActivatorUtilities.CreateInstance(ServiceProvider, actType);
+            return (MiddlerAction)ActivatorUtilities.CreateInstance(ServiceProvider, actType);
         }
 
         public IMiddlerAction? BuildConcreteActionInstance(MiddlerAction middlerAction)
