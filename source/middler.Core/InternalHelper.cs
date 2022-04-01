@@ -4,6 +4,7 @@ using System.Linq;
 using doob.middler.Common.Interfaces;
 using doob.middler.Common.SharedModels.Interfaces;
 using doob.middler.Common.SharedModels.Models;
+using doob.Reflectensions;
 using doob.Reflectensions.ExtensionMethods;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,7 +30,8 @@ namespace doob.middler
             if (actType == null)
                 return null;
 
-            return (MiddlerAction)ActivatorUtilities.CreateInstance(ServiceProvider, actType);
+            var instance = ActivatorUtilities.CreateInstance(ServiceProvider, actType);
+            return Json.Converter.ToObject<MiddlerAction>(instance);
         }
 
         public IMiddlerAction? BuildConcreteActionInstance(MiddlerAction middlerAction)
